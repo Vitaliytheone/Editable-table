@@ -1,7 +1,12 @@
-import { Table } from "./table";
+import { Title, Table } from "./components";
 
 function App() {
-    return <Table />;
+    return (
+        <>
+            <Title>Editable table with parting load</Title>
+            <Table />
+        </>
+    );
 }
 
 export default App;
