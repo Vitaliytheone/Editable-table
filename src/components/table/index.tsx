@@ -7,11 +7,14 @@ const Table = ({}: TTable) => {
         <table>
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Surname</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Avg.mark</th>
+                    {scheme.map((item, idx) => {
+                        const { name } = item;
+                        return (
+                            <th scope="col" key={idx}>
+                                {name}
+                            </th>
+                        );
+                    })}
                 </tr>
             </thead>
             <tbody>
