@@ -2,26 +2,26 @@ export const scheme = [
     {
         id: "name",
         width: "25%",
-        name: "Name",
+        title: "Name",
     },
     {
         id: "surname",
         width: "25%",
-        name: "Surname",
+        title: "Surname",
     },
-        {
+    {
         id: "address",
         width: "30%",
-        name: "Address",
+        title: "Address",
     },
     {
         id: "age",
         width: "10%",
-        name: "Age",
+        title: "Age",
     },
     {
         id: "mark",
         width: "10%",
-        name: "Mark",
+        title: "Mark",
     },
 ];

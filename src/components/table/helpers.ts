@@ -1,4 +1,5 @@
-export const data = () => {
+import { TData } from './type';
+export const getData = (): TData => {
     const arr = [];
     for (let idx = 0; idx < 1000; idx++) {
         arr.push({
