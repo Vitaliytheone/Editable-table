@@ -4,13 +4,13 @@ import { Thead, Tbody } from "./components";
 import { TTable } from "./type";
 import { getData } from "./helpers";
 
-const Table = ({ isEdit }: TTable) => {
+const Table = ({ isEditing }: TTable) => {
     const defaultData = useMemo(() => getData(), []);
     const [state, setState] = useState(defaultData);
     return (
         <table>
             <Thead />
-            <Tbody state={state} />
+            <Tbody state={state} isEditing={isEditing} />
         </table>
     );
 };

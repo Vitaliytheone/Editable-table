@@ -1,16 +1,16 @@
-import { useMemo, useState } from "react";
-import { Title, Table } from "./components";
-import { getData } from "./components/table/helpers";
+import { useState } from "react";
+import { Title, Table, Button } from "./components";
 
 function App() {
-    const [isEdit, setIsEdit] = useState(false);
+    const [isEditing, setIsEdit] = useState(false);
     const onClick = () => {
-        setIsEdit(!isEdit);
+        setIsEdit(!isEditing);
     };
     return (
         <>
             <Title>Editable table with parting load</Title>
-            <Table isEdit={isEdit} />
+            <Button isEditing={isEditing} onSetisEdit={onClick} />
+            <Table isEditing={isEditing} />
         </>
     );
 }
