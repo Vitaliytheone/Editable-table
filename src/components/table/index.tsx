@@ -1,8 +1,14 @@
 import { scheme } from "./sheme";
 import { TTable } from "./type";
+import { data } from "./helpers";
+
 import "./style.scss";
+import { useMemo } from "react";
 
 const Table = ({}: TTable) => {
+    const tableData = useMemo(() => data(), [data]);
+    console.info(tableData);
+    // console.info(data());
     return (
         <table>
             <thead>
