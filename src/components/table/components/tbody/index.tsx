@@ -1,15 +1,17 @@
 import { TData } from "../../type";
 
-const Tbody = (state: TData) => {
-    console.info(state);
+const Tbody = ({ state }: { state: TData }) => {
     return (
-        <tr>
-            <td data-label="Name">Vitaliy</td>
-            <td data-label="Surname">Shevchenko</td>
-            <td data-label="Address">Sevastopol</td>
-            <td data-label="Age">28</td>
-            <td data-label="Avg.mark">4.5</td>
-        </tr>
+        <tbody>
+            {state.map((item) => (
+                <tr>
+                    {Object.entries(item).map((arr) => {
+                        const label = arr[0][0].toUpperCase() + arr[0].slice(1);
+                        return <td data-label={label}>{arr[1]}</td>;
+                    })}
+                </tr>
+            ))}
+        </tbody>
     );
 };
 
