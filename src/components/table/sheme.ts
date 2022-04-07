@@ -22,6 +22,6 @@ export const scheme = [
     {
         id: "mark",
         width: "10%",
-        name: "Avg. mark",
+        name: "Mark",
     },
 ];

@@ -8,9 +8,9 @@ const Table = ({}: TTable) => {
             <thead>
                 <tr>
                     {scheme.map((item, idx) => {
-                        const { name } = item;
+                        const { name, width } = item;
                         return (
-                            <th scope="col" key={idx}>
+                            <th scope="col" key={idx} style={{ width }}>
                                 {name}
                             </th>
                         );
