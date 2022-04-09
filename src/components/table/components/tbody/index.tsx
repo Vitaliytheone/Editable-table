@@ -1,9 +1,9 @@
 import { TBody } from "../../type";
 
-const Tbody = ({ state, isEditing }: TBody) => {
+const Tbody = ({ data, isEditing }: TBody) => {
     return (
         <tbody>
-            {state.map((item, idx) => (
+            {data.map((item, idx) => (
                 <tr key={idx}>
                     {Object.entries(item).map((arr, idx2) => {
                         const label = arr[0][0].toUpperCase() + arr[0].slice(1);

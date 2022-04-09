@@ -1,5 +1,6 @@
 export type TTable = {
     isEditing: boolean;
+    data: TData;
 }
 
 export type TData = Array<{
@@ -10,4 +11,4 @@ export type TData = Array<{
     mark: number;
 }>
 
-export type TBody = TTable & { state: TData};
+export type TBody = TTable;
