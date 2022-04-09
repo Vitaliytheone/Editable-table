@@ -9,6 +9,9 @@ function App() {
 
     const onClick = () => {
         setIsEdit(!isEditing);
+        const newState = [...state];
+        newState[0].age = 20;
+        setState(newState);
     };
 
     return (

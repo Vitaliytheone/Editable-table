@@ -10,7 +10,11 @@ const Tbody = ({ data, isEditing }: TBody) => {
                         const isNumberInput = arr[0] === "age" || arr[0] === "mark";
                         return (
                             <td key={idx2} data-label={label}>
-                                <input type={isNumberInput ? "number" : "text"} value={arr[1]} disabled={!isEditing} />
+                                <input
+                                    type={isNumberInput ? "number" : "text"}
+                                    defaultValue={arr[1]}
+                                    disabled={!isEditing}
+                                />
                             </td>
                         );
                     })}
