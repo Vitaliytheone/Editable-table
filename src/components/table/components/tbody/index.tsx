@@ -1,6 +1,6 @@
 import { TBody } from "../../type";
 
-const Tbody = ({ data, isEditing }: TBody) => {
+const Tbody = ({ data, isEditing, onChange }: TBody) => {
     return (
         <tbody>
             {data.map((item, idx) => (
@@ -11,9 +11,12 @@ const Tbody = ({ data, isEditing }: TBody) => {
                         return (
                             <td key={idx2} data-label={label}>
                                 <input
+                                    data-idx={idx}
+                                    data-field={arr[0]}
                                     type={isNumberInput ? "number" : "text"}
                                     defaultValue={arr[1]}
                                     disabled={!isEditing}
+                                    onChange={onChange}
                                 />
                             </td>
                         );
