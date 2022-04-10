@@ -5,21 +5,24 @@ import { getData } from "./helpers";
 function App() {
     const defaultData = useMemo(() => getData(), []);
     const [state, setState] = useState(defaultData);
+    const [fieldData, setFieldData] = useState<Record<string, string>[]>([]);
     const [isEditing, setIsEdit] = useState(false);
 
     const onClick = () => {
         setIsEdit(!isEditing);
-        // const newState = [...state];
-        // newState[0].age = 20;
-        // setState(newState);
     };
 
     const onChange = useCallback((e) => {
         const { dataset, value } = e.target;
-        console.info(dataset);
-        setState((prevState) => {
+        console.info(dataset, value);
+        setFieldData((prevState) => {
             let newState = [...prevState];
-            console.info(prevState);
+            const newObj = { idx: dataset.idx, [dataset.field]: value };
+            const index = newState.findIndex((item) => item.idx === dataset.idx);
+            if (index) {
+                newState[index] = { ...newObj };
+            }
+            newState.push({ ...newObj });
             return newState;
         });
     }, []);
