@@ -14,18 +14,16 @@ function App() {
 
     const onChange = useCallback((e) => {
         const { dataset, value } = e.target;
-        console.info(dataset, value);
         setFieldData((prevState) => {
             let newState = [...prevState];
             const newObj = { idx: dataset.idx, [dataset.field]: value };
             const index = newState.findIndex((item) => item.idx === dataset.idx);
-            if (index) {
-                newState[index] = { ...newObj };
-            }
-            newState.push({ ...newObj });
+            index >= 0 ? (newState[index] = { ...newState[index], ...newObj }) : newState.push(newObj);
             return newState;
         });
     }, []);
+
+    console.info(fieldData);
 
     return (
         <>
