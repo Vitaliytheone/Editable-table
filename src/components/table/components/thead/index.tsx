@@ -1,4 +1,5 @@
 import { scheme } from "../../scheme";
+import { memo } from "react";
 
 const Thead = () => {
     return (
@@ -17,4 +18,4 @@ const Thead = () => {
     );
 };
 
-export default Thead;
+export default memo(Thead);
