@@ -14,7 +14,6 @@ function App() {
 
     const onChange = useCallback((e) => {
         const { dataset, value } = e.target;
-        console.info(e.target);
         setFieldData((prevState) => {
             let newState = [...prevState];
             const newObj = { idx: dataset.idx, [dataset.field]: value };

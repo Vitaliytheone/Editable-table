@@ -1,4 +1,7 @@
-const Col = ({ label, idx, disabled, onChange, type, defaultValue, field }: any) => {
+import { memo } from "react";
+import { TBodyCol } from "../../../../type";
+
+const Col = ({ label, idx, disabled, onChange, type, defaultValue, field }: TBodyCol) => {
     console.info("render Col");
     return (
         <td data-label={label}>
@@ -14,4 +17,4 @@ const Col = ({ label, idx, disabled, onChange, type, defaultValue, field }: any)
     );
 };
 
-export default Col;
+export default memo(Col);
