@@ -1,6 +1,7 @@
 import { TBody } from "../../type";
 
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
+    console.info("render Tbody");
     return (
         <tbody>
             {data.map((item, idx) => (
