@@ -6,7 +6,11 @@ const Row = ({ children }: { children: React.ReactNode }) => {
     const isVisible = useOnScreen(ref);
     console.info(isVisible);
 
-    return <tr ref={ref}>{children}</tr>;
+    return (
+        <tr ref={ref} style={{ display: isVisible ? "table-row" : "none" }}>
+            {children}
+        </tr>
+    );
 };
 
 export default Row;
