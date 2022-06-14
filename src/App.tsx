@@ -4,12 +4,14 @@ import { getData } from "./helpers";
 
 function App() {
     const defaultData = useMemo(() => getData(), []);
-    const [state, setState] = useState(defaultData);
+    const [state] = useState(defaultData);
+    // changed fields for server response
     const [fieldData, setFieldData] = useState<Record<string, string>[]>([]);
     const [isEditing, setIsEdit] = useState(false);
 
     const onClick = () => {
         setIsEdit(!isEditing);
+        console.info(fieldData);
     };
 
     const onChange = useCallback((e) => {
