@@ -11,7 +11,9 @@ function App() {
 
     const onClick = () => {
         setIsEdit(!isEditing);
-        console.info(fieldData);
+        if (isEditing && fieldData.length) {
+            alert(`CHANGED FIELDS: ${JSON.stringify(fieldData)}`);
+        }
     };
 
     const onChange = useCallback((e) => {
