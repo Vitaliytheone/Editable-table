@@ -3,9 +3,9 @@ import { useOnScreen } from "../../../../../../_hooks/useOnScreen";
 const Row = ({ children }: { children: React.ReactNode }) => {
     const ref = useRef<HTMLTableRowElement>(null);
     const isVisible = useOnScreen(ref);
-    // console.info(isVisible);
+    console.info(isVisible);
 
-    return <tr ref={ref}>{children}</tr>;
+    return <> {<tr ref={ref}>{children}</tr>}</>;
 };
 
 export default Row;

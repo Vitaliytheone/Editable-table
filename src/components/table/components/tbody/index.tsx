@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { TBody } from "../../type";
 import { Row, Col } from "./components";
 
