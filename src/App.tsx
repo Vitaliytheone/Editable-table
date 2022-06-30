@@ -27,8 +27,7 @@ function App() {
         });
     }, []);
 
-    // console.info(fieldData);
-    // console.info(state);
+    console.info(fieldData);
     return (
         <>
             <Title>Editable table with parting load</Title>
