@@ -1,12 +1,15 @@
 import { TBody } from "../../type";
-import { Row, Col } from "./components";
+import { Col } from "./components";
+import { CSSProperties } from "react";
 import { FixedSizeList as List } from "react-window";
+
+const Row = ({ index, style }: { index: number; style: CSSProperties }) => <div style={style}>Row {index}</div>;
 
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
     return (
-        <tbody>
-            <List>
-                {data.map((item, idx) => (
+        <List className="List" height={150} itemCount={1000} itemSize={35} width={300}>
+            {Row}
+            {/* {data.map((item, idx) => (
                     <Row key={idx}>
                         {Object.entries(item).map((arr, idx2) => {
                             const label = arr[0][0].toUpperCase() + arr[0].slice(1);
@@ -25,9 +28,8 @@ const Tbody = ({ data, isEditing, onChange }: TBody) => {
                             );
                         })}
                     </Row>
-                ))}
-            </List>
-        </tbody>
+                ))} */}
+        </List>
     );
 };
 
