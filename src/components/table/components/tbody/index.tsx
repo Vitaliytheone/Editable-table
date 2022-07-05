@@ -3,11 +3,16 @@ import { Col } from "./components";
 import { CSSProperties } from "react";
 import { FixedSizeList as List } from "react-window";
 
-const Row = ({ index, style }: { index: number; style: CSSProperties }) => <div style={style}>Row {index}</div>;
+const Row = ({ index, style, data }: { index: number; style: CSSProperties, data: any }) => {
+    console.info(data)
+    return (
+         <div style={style}>Row {index}</div>
+    )
+}
 
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
     return (
-        <List className="List" height={150} itemCount={1000} itemSize={35} width={300}>
+        <List className="List" height={1000} width='100%' itemCount={1000} itemData={data}  itemSize={35}>
             {Row}
             {/* {data.map((item, idx) => (
                     <Row key={idx}>
