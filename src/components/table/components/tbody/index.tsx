@@ -2,10 +2,12 @@ import { TBody } from "../../type";
 import { Col, Row } from "./components";
 import { CSSProperties } from "react";
 import { FixedSizeList as List } from "react-window";
+import useWindowDimensions from "../../../../_hooks/useWindowDimension";
 
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
+    const { height, width } = useWindowDimensions();
     return (
-        <List className="List" height={500} width={1000} itemCount={1000} itemData={data} itemSize={35}>
+        <List className="List" height={height} width={1000} itemCount={1000} itemData={data} itemSize={35}>
             {Row}
             {/* {data.map((item, idx) => (
                     <Row key={idx}>
