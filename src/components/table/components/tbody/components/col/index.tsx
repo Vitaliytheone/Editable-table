@@ -3,12 +3,13 @@ import { TBodyCol } from "../../../../type";
 
 const Col = ({ label, idx, disabled, onChange, type, defaultValue, field }: TBodyCol) => {
     console.info("render Col");
+    console.info(field);
     return (
         <td data-label={label}>
             <input
+                type={type}
                 data-idx={idx}
                 data-field={field}
-                type={type}
                 defaultValue={defaultValue}
                 disabled={disabled}
                 onChange={onChange}

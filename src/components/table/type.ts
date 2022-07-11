@@ -1,7 +1,11 @@
+import { CSSProperties } from "react";
+
+type TOnChange = (e: React.ChangeEvent<HTMLInputElement>) => void
+
 export type TTable = {
     isEditing: boolean;
     data: TData;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: TOnChange
 }
 
 export type TData = Array<{
@@ -21,5 +25,11 @@ export type TBodyCol = {
     type: 'number' | 'text';
     defaultValue: number | string;
     field: number | string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: TOnChange
+}
+
+export type TRow = {
+    index: number;
+    style: CSSProperties;
+    data: { items: TData, isEditing: boolean, onChange: TOnChange }
 }

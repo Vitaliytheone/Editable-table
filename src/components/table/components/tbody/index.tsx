@@ -5,9 +5,17 @@ import { FixedSizeList as List } from "react-window";
 import useWindowDimensions from "../../../../_hooks/useWindowDimension";
 
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
-    const { height, width } = useWindowDimensions();
+    const { height } = useWindowDimensions();
     return (
-        <List className="List" height={height} width={1000} itemCount={1000} itemData={data} itemSize={35}>
+        <List
+            // innerElementType="tbody"
+            // outerElementType="tbody"
+            height={height}
+            width="100%"
+            itemCount={10}
+            itemData={{ items: data, isEditing, onChange }}
+            itemSize={35}
+        >
             {Row}
             {/* {data.map((item, idx) => (
                     <Row key={idx}>
