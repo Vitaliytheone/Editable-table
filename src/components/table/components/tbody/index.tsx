@@ -4,6 +4,24 @@ import { CSSProperties } from "react";
 import { FixedSizeList as List } from "react-window";
 import useWindowDimensions from "../../../../_hooks/useWindowDimension";
 
+const innerElementType = forwardRef(({ children, ...rest }, ref) => (
+    <StickyListContext.Consumer>
+        {({ stickyIndices }) => (
+            <table ref={ref} {...rest}>
+                {stickyIndices.map((index) => (
+                    <StickyRow
+                        index={index}
+                        key={index}
+                        style={{ top: index * 35, left: 0, width: "100%", height: 35 }}
+                    />
+                ))}
+
+                <tbody>{children}</tbody>
+            </table>
+        )}
+    </StickyListContext.Consumer>
+));
+
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
     const { height } = useWindowDimensions();
     return (
