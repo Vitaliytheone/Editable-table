@@ -2,8 +2,6 @@ import { memo } from "react";
 import { TBodyCol } from "../../../../type";
 
 const Col = ({ label, idx, disabled, onChange, type, defaultValue, field }: TBodyCol) => {
-    console.info("render Col");
-    console.info(field);
     return (
         <td data-label={label}>
             <input

@@ -24,15 +24,16 @@ import useWindowDimensions from "../../../../_hooks/useWindowDimension";
 
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
     const { height } = useWindowDimensions();
+    console.info(data);
     return (
         <List
-            // innerElementType="tbody"
-            // outerElementType="tbody"
+            outerElementType="div"
+            innerElementType="table"
             height={height}
             width="100%"
-            itemCount={10}
+            itemCount={data.length}
             itemData={{ items: data, isEditing, onChange }}
-            itemSize={35}
+            itemSize={60}
         >
             {Row}
             {/* {data.map((item, idx) => (
