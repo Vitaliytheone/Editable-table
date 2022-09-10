@@ -27,7 +27,7 @@ const Tbody = ({ data, isEditing, onChange }: TBody) => {
     console.info(data);
     return (
         <List
-            outerElementType="div"
+            // outerElementType="div"
             innerElementType="table"
             height={height}
             width="100%"
