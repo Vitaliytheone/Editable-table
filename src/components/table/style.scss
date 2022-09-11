@@ -1,71 +1,77 @@
-table {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  max-width: 900px;
-  width: 100%;
-
-  tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: 6px;
-  }
-
-  th {
-    padding: 12px;
-    text-align: center;
-  }
-
-  td {
-    padding: 6px;
-
-    input {
-      padding: 12px;
-      font-size: 16px;
-
-      &:disabled {
-        border: none;
-        text-align: center;
-        background: transparent;
-      }
-    }
-  }
-
-  @media screen and (max-width: 680px) {
-    border: none;
-
-    thead {
-      border: none;
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
+.wrapper {
+  
+    table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
       padding: 0;
-      position: absolute;
-      width: 1px;
-    }
+      width: 100%;
 
-    tr {
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    td {
-      display: block;
-      text-align: right;
-
-      input:disabled {
-        text-align: right;
+      thead {
+        height: 50px;
+        width: 100%;
       }
 
-      &:not(:last-child) {
-        border-bottom: 1px solid #ddd;
+      tr {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
       }
-      &:before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
+
+      th {
+        // padding: 12px;
+        text-align: center;
+      }
+
+      td {
+        height: 50px;
+
+        input {
+          padding: 12px;
+          font-size: 16px;
+
+          &:disabled {
+            border: none;
+            text-align: center;
+            background: transparent;
+          }
+        }
+      }
+
+      @media screen and (max-width: 680px) {
+        border: none;
+
+        thead {
+          border: none;
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+
+        tr {
+          display: block;
+          margin-bottom: 16px;
+        }
+
+        td {
+          display: block;
+          text-align: right;
+
+          input:disabled {
+            text-align: right;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #ddd;
+          }
+          &:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+          }
+        }
       }
     }
-  }
 }

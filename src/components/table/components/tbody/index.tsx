@@ -3,6 +3,7 @@ import { Col, Row } from "./components";
 import { CSSProperties } from "react";
 import { FixedSizeList as List } from "react-window";
 import useWindowDimensions from "../../../../_hooks/useWindowDimension";
+import Thead from "../thead";
 
 // const innerElementType = forwardRef(({ children, ...rest }, ref) => (
 //     <StickyListContext.Consumer>
@@ -22,18 +23,28 @@ import useWindowDimensions from "../../../../_hooks/useWindowDimension";
 //     </StickyListContext.Consumer>
 // ));
 
+const Table = ({ children }: any) => {
+    return (
+        <table>
+            <Thead />
+            <tbody>{children}</tbody>
+        </table>
+    );
+};
+
 const Tbody = ({ data, isEditing, onChange }: TBody) => {
     const { height } = useWindowDimensions();
     console.info(data);
     return (
         <List
-            // outerElementType="div"
-            innerElementType="table"
+            className="wrapper"
+            outerElementType="div"
+            innerElementType={Table}
             height={height}
-            width="100%"
             itemCount={data.length}
             itemData={{ items: data, isEditing, onChange }}
-            itemSize={60}
+            width={880}
+            itemSize={50}
         >
             {Row}
             {/* {data.map((item, idx) => (
