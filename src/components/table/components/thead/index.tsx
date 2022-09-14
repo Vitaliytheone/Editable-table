@@ -8,7 +8,7 @@ const Thead = () => {
                 {scheme.map((item, idx) => {
                     const { title, width } = item;
                     return (
-                        <th scope="col" key={idx} style={{ width }}>
+                        <th scope="col" key={idx}>
                             {title}
                         </th>
                     );

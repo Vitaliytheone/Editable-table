@@ -27,7 +27,6 @@ function App() {
         });
     }, []);
 
-    console.info(fieldData);
     return (
         <>
             <Title>Editable table with parting load</Title>
