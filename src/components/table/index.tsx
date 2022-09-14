@@ -4,10 +4,10 @@ import { TTable } from "./type";
 
 const Table = ({ data, isEditing, onChange }: TTable) => {
     return (
-        // <table>
-        //     <Thead />
-        <Tbody data={data} isEditing={isEditing} onChange={onChange} />
-        // </table>
+        <table>
+            <Thead />
+            <Tbody data={data} isEditing={isEditing} onChange={onChange} />
+        </table>
     );
 };
 
