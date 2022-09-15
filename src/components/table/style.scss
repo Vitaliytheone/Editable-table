@@ -1,84 +1,48 @@
 .wrapper {
   border: 1px solid #ccc;
   max-width: 960px;
-  
-    table {
-      border-collapse: collapse;
-      margin: 0;
-      padding: 0;
-      width: 960px;
-      height: 100%;
 
-      thead {
-        height: 50px;
+  table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 960px;
+    height: 100%;
+
+    thead {
+      height: 50px;
+      width: 100%;
+    }
+
+    tbody {
+      position: relative;
+
+      tr {
+        background-color: #f8f8f8;
+        border-top: 1px solid #ddd;
+        width: 20%;
+      }
+    }
+
+    th {
+      text-align: center;
+    }
+
+    td {
+      height: 50px;
+
+      input {
+        padding: 12px;
         width: 100%;
-      }
+        box-sizing: border-box;
+        font-size: 16px;
 
-      tbody {
-        position: relative;
-
-        tr {
-            background-color: #f8f8f8;
-            border-top: 1px solid #ddd;
-          }
-      }
-
-      th {
-        text-align: center;
-      }
-
-      td {
-        height: 50px;
-
-        input {
-          padding: 12px;
-          width: 100%;
-          box-sizing: border-box;
-          font-size: 16px;
-
-          &:disabled {
-            border: none;
-            text-align: center;
-            background: transparent;
-          }
+        &:disabled {
+          border: none;
+          text-align: center;
+          background: transparent;
         }
       }
-
-      // @media screen and (max-width: 680px) {
-      //   border: none;
-
-      //   thead {
-      //     border: none;
-      //     height: 1px;
-      //     margin: -1px;
-      //     overflow: hidden;
-      //     padding: 0;
-      //     position: absolute;
-      //     width: 1px;
-      //   }
-
-      //   tr {
-      //     display: block;
-      //     margin-bottom: 16px;
-      //   }
-
-      //   td {
-      //     display: block;
-      //     text-align: right;
-
-      //     input:disabled {
-      //       text-align: right;
-      //     }
-
-      //     &:not(:last-child) {
-      //       border-bottom: 1px solid #ddd;
-      //     }
-      //     &:before {
-      //       content: attr(data-label);
-      //       float: left;
-      //       font-weight: bold;
-      //     }
-      //   }
-      // }
     }
+  }
 }

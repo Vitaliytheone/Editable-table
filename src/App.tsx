@@ -28,11 +28,11 @@ function App() {
     }, []);
 
     return (
-        <>
+        <div className="app">
             <Title>Editable table with parting load</Title>
             <Button isEditing={isEditing} onSetisEdit={onClick} />
             <Table data={state} isEditing={isEditing} onChange={onChange} />
-        </>
+        </div>
     );
 }
 

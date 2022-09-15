@@ -5,11 +5,10 @@ const Thead = () => {
     return (
         <thead>
             <tr>
-                {scheme.map((item, idx) => {
-                    const { title, width } = item;
+                {scheme.map((item) => {
                     return (
-                        <th scope="col" key={idx}>
-                            {title}
+                        <th scope="col" key={item.id}>
+                            {item.title}
                         </th>
                     );
                 })}
