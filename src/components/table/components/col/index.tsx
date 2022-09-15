@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { TBodyCol } from "../../../../type";
+import { TBodyCol } from "../../type";
 
 const Col = ({ label, idx, disabled, onChange, type, defaultValue, field }: TBodyCol) => {
     return (

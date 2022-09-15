@@ -1,5 +1,5 @@
+import { TRow } from "../../type";
 import Col from "../col";
-import { TRow } from "../../../../type";
 
 const Row = ({ index, style, data }: TRow) => {
     const { items, isEditing, onChange } = data;
