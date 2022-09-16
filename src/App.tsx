@@ -4,8 +4,8 @@ import { getData } from "./helpers";
 
 function App() {
     const defaultData = useMemo(() => getData(), []);
-    const [state] = useState(defaultData);
-    // changed fields for server response
+    const [tableData, setData] = useState(defaultData);
+    // changed fields for server request
     const [fieldData, setFieldData] = useState<Record<string, string>[]>([]);
     const [isEditing, setIsEdit] = useState(false);
 
@@ -18,7 +18,12 @@ function App() {
 
     const onChange = useCallback((e) => {
         const { dataset, value } = e.target;
-        console.info(dataset);
+        const { idx, field } = dataset;
+        setData((prevState) => {
+            let newState = [...prevState];
+            (newState as any)[idx][field] = value;
+            return newState;
+        });
         setFieldData((prevState) => {
             let newState = [...prevState];
             const newObj = { idx: dataset.idx, [dataset.field]: value };
@@ -32,7 +37,7 @@ function App() {
         <div className="app">
             <Title>Editable table with parting load</Title>
             <Button isEditing={isEditing} onSetisEdit={onClick} />
-            <Table data={state} isEditing={isEditing} onChange={onChange} />
+            <Table data={tableData} isEditing={isEditing} onChange={onChange} />
         </div>
     );
 }

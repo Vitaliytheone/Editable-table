@@ -23,7 +23,7 @@ export type TBodyCol = {
     idx: number;
     disabled: boolean;
     type: 'number' | 'text';
-    defaultValue: number | string;
+    value: number | string;
     field: number | string;
     onChange: TOnChange
 }

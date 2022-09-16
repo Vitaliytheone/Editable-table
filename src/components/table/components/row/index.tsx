@@ -11,13 +11,13 @@ const Row = ({ index, style, data }: TRow) => {
                 return (
                     <Col
                         key={idx}
-                        idx={idx}
+                        idx={index}
                         field={item[0]}
                         type={isNumberInput ? "number" : "text"}
                         label={label}
                         onChange={onChange}
                         disabled={!isEditing}
-                        defaultValue={item[1]}
+                        value={item[1]}
                     />
                 );
             })}
