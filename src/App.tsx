@@ -1,8 +1,9 @@
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useRef, useState, useCallback } from "react";
 import { Title, Table, Button } from "./components";
 import { getData } from "./helpers";
 
 function App() {
+    const ref = useRef(null);
     const defaultData = useMemo(() => getData(), []);
     const [tableData, setData] = useState(defaultData);
     // changed fields for server request
@@ -33,10 +34,13 @@ function App() {
         });
     }, []);
 
+    console.info(ref);
     return (
         <div className="app">
-            <Title>Editable table with parting load</Title>
-            <Button isEditing={isEditing} onSetisEdit={onClick} />
+            <div ref={ref}>
+                <Title>Editable table with parting load</Title>
+                <Button isEditing={isEditing} onSetisEdit={onClick} />
+            </div>
             <Table data={tableData} isEditing={isEditing} onChange={onChange} />
         </div>
     );
