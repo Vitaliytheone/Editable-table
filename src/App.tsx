@@ -1,9 +1,11 @@
-import { useMemo, useRef, useState, useCallback } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { Title, Table, Button } from "./components";
 import { getData } from "./helpers";
 
 function App() {
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
+    // default value - page top+bottom paddings
+    const [subHeight, setSubHeight] = useState(24);
     const defaultData = useMemo(() => getData(), []);
     const [tableData, setData] = useState(defaultData);
     // changed fields for server request
@@ -34,14 +36,19 @@ function App() {
         });
     }, []);
 
-    console.info(ref);
+    useEffect(() => {
+        if (ref?.current) {
+            setSubHeight((v) => v + ref.current!.offsetHeight);
+        }
+    }, []);
+
     return (
         <div className="app">
             <div ref={ref}>
                 <Title>Editable table with parting load</Title>
                 <Button isEditing={isEditing} onSetisEdit={onClick} />
             </div>
-            <Table data={tableData} isEditing={isEditing} onChange={onChange} />
+            <Table subHeight={subHeight} data={tableData} isEditing={isEditing} onChange={onChange} />
         </div>
     );
 }

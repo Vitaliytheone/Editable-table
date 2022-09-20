@@ -6,6 +6,7 @@ export type TTable = {
     isEditing: boolean;
     data: TData;
     onChange: TOnChange
+    subHeight: number;
 }
 
 export type TData = Array<{

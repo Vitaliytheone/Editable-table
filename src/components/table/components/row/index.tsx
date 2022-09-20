@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { TRow } from "../../type";
 import Col from "../col";
 
@@ -25,4 +26,4 @@ const Row = ({ index, style, data }: TRow) => {
     );
 };
 
-export default Row;
+export default memo(Row);
